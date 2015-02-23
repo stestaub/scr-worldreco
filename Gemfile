@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

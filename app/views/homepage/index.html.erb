@@ -9,24 +9,14 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <%= form_for(@registration) do |f| %>
-        <%= f.label :timeslot1 %>
-        <%= f.time_select :timeslot1 %> <br />
+    <%= bootstrap_form_for(@registration) do |f| %>
 
-        <%= f.label :timeslot2 %>
-        <%= f.time_select :timeslot2 %> <br />
-
-        <%= f.label :timeslot3 %>
-        <%= f.time_select :timeslot3 %> <br />
-
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %><br />
-
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %> <br />
-
-        <%= f.label :email %>
-        <%= f.email_field :email %> <br />
+        <%= f.time_select :timeslot1 %>
+        <%= f.time_select :timeslot2 %>
+        <%= f.time_select :timeslot3 %>
+        <%= f.text_field :first_name %>
+        <%= f.text_field :last_name %>
+        <%= f.email_field :email %>
 
 
         <%= f.submit %>

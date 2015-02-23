@@ -1,2 +1,35 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<div class="row">
+  <div class="col-sm-8">
+    <h1>Der Rekord Versuch</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="col-sm-4">
+    <img src="http://placehold.it/350x350" class="img-responsive">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <%= form_for(@registration) do |f| %>
+        <%= f.label :timeslot1 %>
+        <%= f.time_select :timeslot1 %> <br />
+
+        <%= f.label :timeslot2 %>
+        <%= f.time_select :timeslot2 %> <br />
+
+        <%= f.label :timeslot3 %>
+        <%= f.time_select :timeslot3 %> <br />
+
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %><br />
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %> <br />
+
+        <%= f.label :email %>
+        <%= f.email_field :email %> <br />
+
+
+        <%= f.submit %>
+    <% end %>
+  </div>
+</div>

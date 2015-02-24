@@ -4,6 +4,7 @@ class RegistrationsController < ApplicationController
     if @registration.save
       render 'show'
     else
+      @registration_counts = Registration.count_per_timeslot
       render 'homepage/index'
     end
 

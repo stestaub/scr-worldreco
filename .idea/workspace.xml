@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0983d74-0144-4526-82a7-c99ba1fc7b70" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/admin/registration.rb" afterPath="$PROJECT_DIR$/app/admin/registration.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="scr-worldrecord.iws" />
@@ -96,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.13953489" vertical-offset="0" max-vertical-offset="903">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -1341,7 +1340,7 @@
     <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13953489" vertical-offset="0" max-vertical-offset="903">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -24,32 +24,56 @@
   <div class="col-sm-12">
     <h1>Jetzt Provisorisch anmelden</h1>
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
-        <%= f.alert_message "Please fix the errors below." %>
+        <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben." %>
 
-        <%= f.form_group :timeslots do %>
+        <%= f.form_group :timeslots, label: {text: "Teilnahme Zeit"}, help: "Wir werden versuchen ihre wahl bestmöglich zu berücksichtigen." do %>
             <div class="row">
               <div class="col-md-4">
-                <%= f.time_select :timeslot1, {start_hour: 12, end_hour: 20, minute_step: 15} %>
+                <%= f.time_select :timeslot1, {label: "Prio 1",
+                                               label_col: "col-sm-3",
+                                               control_col: "col-sm-7",
+                                               start_hour: 12,
+                                               end_hour: 20,
+                                               minute_step: 15} %>
               </div>
               <div class="col-md-4">
-                <%= f.time_select :timeslot2, {start_hour: 12, end_hour: 20, minute_step: 15} %>
+                <%= f.time_select :timeslot2, {label: "Prio 2",
+                                               label_col: "col-sm-3",
+                                               control_col: "col-sm-7",
+                                               start_hour: 12,
+                                               end_hour: 20,
+                                               minute_step: 15} %>
               </div>
               <div class="col-md-4">
-                <%= f.time_select :timeslot3, {start_hour: 12, end_hour: 20, minute_step: 15} %>
+                <%= f.time_select :timeslot3, {label: "Prio 3",
+                                               label_col: "col-sm-3",
+                                               control_col: "col-sm-7",
+                                               start_hour: 12,
+                                               end_hour: 20,
+                                               minute_step: 15} %>
               </div>
             </div>
 
         <% end %>
-        <%= f.text_field :first_name %>
-        <%= f.text_field :last_name %>
-        <%= f.email_field :email %>
-        <%= f.telephone_field :phonenumber %>
-        <div class="alert alert-info">
-          <h4>Hinweis zum Datenschutz</h4>
-          <p>Ihre daten werden nur für interne zwecke benötigt, um sie zu kontaktieren und werden nicht an dritte weiter gegeben.</p>
-        </div>
+        <%= f.text_field :first_name, label: "Vorname" %>
+        <%= f.text_field :last_name, label: "Nachname" %>
+        <%= f.email_field :email, label: "Email", help: "Nach ihrer anmeldung werden sie eine Bestätigungsemail mit weiteren Informationen zum Anlass bekommen." %>
+        <%= f.telephone_field :phonenumber, label: "Telefonnummer", help: "Wir werden sie eventuell anrufen um ..." %>
 
-        <%= f.submit "Anmelden", class: "btn btn-success pull-right" %>
+        <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekord versuch müssen sie volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor" do %>
+            <%= f.check_box :confirm_age, label: "Ich bestätige dass ich über 18 bin"  %>
+        <% end %>
+
+        <%= f.form_group :confirm_age, label: {text: "Teilnahmebedingungen"}, help: "" do %>
+            <%= f.check_box :accept_agb, label: "Ich bestätige dass ich die Teilnahme bedingungen gelesen habe und damit einverstanden bin"  %>
+        <% end %>
+
+        <%= f.submit "Anmelden", class: "btn btn-success" %>
     <% end %>
+
+    <div class="alert alert-info">
+      <h4>Hinweis zum Datenschutz</h4>
+      <p>Ihre daten werden nur für interne zwecke benötigt, um sie zu kontaktieren und werden nicht an dritte weiter gegeben.</p>
+    </div>
   </div>
 </div>

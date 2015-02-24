@@ -23,8 +23,27 @@
 <div class="row">
   <div class="col-sm-12">
     <h1>Jetzt Provisorisch anmelden</h1>
+    <table class="table table-bordered">
+      <tr>
+        <th class="col-sm-1">h/m</th>
+        <th>00 - 15</th>
+        <th>15 - 30</th>
+        <th>30 - 45</th>
+        <th>45 - 00</th>
+      </tr>
+      <% 8.times do |index| %>
+          <tr>
+            <th><%= index + 12 %> Uhr</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      <% end %>
+    </table>
+
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
-        <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben." %>
+        <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben.", error_summary: false %>
 
         <%= f.form_group :timeslots, label: {text: "Teilnahme Zeit"}, help: "Wir werden versuchen ihre wahl bestmöglich zu berücksichtigen." do %>
             <div class="row">
@@ -68,7 +87,9 @@
             <%= f.check_box :accept_agb, label: "Ich bestätige dass ich die Teilnahme bedingungen gelesen habe und damit einverstanden bin"  %>
         <% end %>
 
-        <%= f.submit "Anmelden", class: "btn btn-success" %>
+        <%= f.form_group :actions do %>
+            <%= f.submit "Anmelden", class: "btn btn-success" %>
+        <% end %>
     <% end %>
 
     <div class="alert alert-info">

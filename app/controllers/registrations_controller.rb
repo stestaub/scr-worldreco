@@ -5,9 +5,14 @@ class RegistrationsController < ApplicationController
       render 'show'
     else
       @registration_counts = Registration.count_per_timeslot
-      render 'homepage/index'
+      render 'new'
     end
 
+  end
+
+  def new
+    @registration = Registration.new
+    @registration_counts = Registration.count_per_timeslot
   end
 
   private

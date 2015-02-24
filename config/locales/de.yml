@@ -19,5 +19,25 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+de:
   hello: "Hello world"
+
+  activerecord:
+    models:
+      registration:
+        one: Anmeldung
+        other: Anmeldungen
+    attributes:
+      registration:
+        first_name: Vorname
+        last_name: Nachname
+        email: Email
+        timeslot1: Prio 1
+        timeslot2: Prio 2
+        timeslot3: Prio 3
+        timeslot3: Prio 3
+        created_at: Erstellt am
+        updated_at: Geändert am
+        phonenumber: Telefon
+        confirm_age: Volljährig
+        accept_agb: AGB Akzeptiert

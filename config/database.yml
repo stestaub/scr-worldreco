@@ -80,6 +80,3 @@ test:
 #
 production:
   <<: *default
-  database: scr-worldrecord_production
-  username: scr-worldrecord
-  password: <%= ENV['SCR-WORLDRECORD_DATABASE_PASSWORD'] %>

@@ -23,29 +23,34 @@
 <div class="row">
   <div class="col-sm-12">
     <h1>Jetzt Provisorisch anmelden</h1>
-    <table class="table table-bordered">
-      <tr>
-        <th class="col-sm-1">h/m</th>
-        <th>00 - 15</th>
-        <th>15 - 30</th>
-        <th>30 - 45</th>
-        <th>45 - 00</th>
-      </tr>
-      <% 8.times do |index| %>
-          <tr>
-            <th><%= index + 12 %> Uhr</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-      <% end %>
-    </table>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-10">
+
+      </div>
+    </div>
 
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
         <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben.", error_summary: false %>
 
         <%= f.form_group :timeslots, label: {text: "Teilnahme Zeit"}, help: "Wir werden versuchen ihre wahl bestmöglich zu berücksichtigen." do %>
+            <table class="table table-bordered">
+              <tr>
+                <th class="col-sm-1">h/m</th>
+                <th>00 - 15</th>
+                <th>15 - 30</th>
+                <th>30 - 45</th>
+                <th>45 - 00</th>
+              </tr>
+              <% 8.times do |index| %>
+                  <tr>
+                    <th><%= index + 12 %> Uhr</th>
+                    <td><%= @registration_counts[index][0] %></td>
+                    <td><%= @registration_counts[index][1] %></td>
+                    <td><%= @registration_counts[index][2] %></td>
+                    <td><%= @registration_counts[index][3] %></td>
+                  </tr>
+              <% end %>
+            </table>
             <div class="row">
               <div class="col-md-4">
                 <%= f.time_select :timeslot1, {label: "Prio 1",

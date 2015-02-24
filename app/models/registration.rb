@@ -5,6 +5,21 @@ class Registration < ActiveRecord::Base
   validates :confirm_age, acceptance: { accept: true, message: "Sie müssen mindestens 18 sein um Teilnehmen zu können." }
   validates :accept_agb, acceptance: { accept: true, message: "Bitte lesen und akzeptieren sie die Teilnahmebedingungen" }
 
+  def self.count_per_timeslot
+    sql = "SELECT extract(hour FROM date_trunc('hour', timeslot1))::int AS hour_stump
+                ,(extract(minute FROM timeslot1)::int / 15) AS min15_slot
+                ,count(*)
+          FROM   registrations
+          GROUP  BY 1, 2
+          ORDER  BY 1, 2;"
+    timeslots = ActiveRecord::Base.connection.execute(sql)
+    time_grid = (0..8).collect { |i| [0, 0, 0, 0]  }
+    timeslots.each do |row|
+      time_grid[row['hour_stump'].to_i - 12][row['15min_slot'].to_i] = row['count'].to_i
+    end
+    time_grid
+  end
+
   def time_slots_not_same
     if self.timeslot1 == self.timeslot2 ||
       self.timeslot1 == self.timeslot3 ||

@@ -1,10 +1,8 @@
-require 'routes_helpers'
-include RoutesHelpers
 
 Rails.application.routes.draw do
 
   devise_for :admins, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self) if not_migration_task
+  ActiveAdmin.routes(self)
 
   get '/' => 'homepage#index'
 

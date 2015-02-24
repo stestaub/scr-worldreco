@@ -24,6 +24,7 @@
   <div class="col-sm-12">
     <h1>Jetzt Provisorisch anmelden</h1>
     <%= bootstrap_form_for(@registration) do |f| %>
+        <%= f.alert_message "Please fix the errors below." %>
 
         <%= f.time_select :timeslot1, {start_hour: 12, end_hour: 20, minute_step: 15} %>
         <%= f.time_select :timeslot2, {start_hour: 12, end_hour: 20, minute_step: 15} %>
@@ -31,6 +32,7 @@
         <%= f.text_field :first_name %>
         <%= f.text_field :last_name %>
         <%= f.email_field :email %>
+        <%= f.telephone_field :phonenumber %>
 
 
         <%= f.submit %>

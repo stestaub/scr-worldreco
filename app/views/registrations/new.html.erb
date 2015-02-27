@@ -1,13 +1,20 @@
 <div class="container">
 <div class="row">
   <div class="col-sm-12">
-    <h1>Jetzt Provisorisch anmelden</h1>
+    <h1>Jetzt anmelden</h1>
 
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
         <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben.", error_summary: false %>
 
+
+        <%= f.text_field :first_name, label: "Vorname" %>
+        <%= f.text_field :last_name, label: "Nachname" %>
+        <%= f.email_field :email, label: "Email", help: "Nach ihrer anmeldung werden sie eine Bestätigungsemail mit weiteren Informationen zum Anlass bekommen." %>
+        <%= f.telephone_field :phonenumber, label: "Telefonnummer", help: "Wir werden sie eventuell anrufen um ..." %>
+
         <%= f.form_group :timeslots, label: {text: "Teilnahme Zeit"}, help: "Wir werden versuchen ihre wahl bestmöglich zu berücksichtigen." do %>
-            <h5>Anmeldungen:</h5>
+            <h5>Anmeldungen: <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
+                                            title="Ich beschreibe um was es sich hier genau handelt"></i></h5>
             <table class="table table-bordered">
               <tr>
                 <th class="col-sm-1">h/m</th>
@@ -54,10 +61,10 @@
             </div>
 
         <% end %>
-        <%= f.text_field :first_name, label: "Vorname" %>
-        <%= f.text_field :last_name, label: "Nachname" %>
-        <%= f.email_field :email, label: "Email", help: "Nach ihrer anmeldung werden sie eine Bestätigungsemail mit weiteren Informationen zum Anlass bekommen." %>
-        <%= f.telephone_field :phonenumber, label: "Telefonnummer", help: "Wir werden sie eventuell anrufen um ..." %>
+
+        <%= f.form_group :definit, label: {text: "Definitive Anmeldung"} do %>
+            <%= f.check_box :confirm_age, label: "Ja ich melde mich definitv an"  %>
+        <% end %>
 
         <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekord versuch müssen sie volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor" do %>
             <%= f.check_box :confirm_age, label: "Ich bestätige dass ich über 18 bin"  %>

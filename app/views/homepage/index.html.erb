@@ -39,21 +39,39 @@
 </div>
 
 <div class="container">
-<hr class="featurette-divider">
-<div class="row featurette">
-  <div class="col-sm-8">
-    <h1>Wann Wie Wo</h1>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-    <ul>
-      <li>Erstens</li>
-      <li>Dann Zweitens</li>
-      <li>Und zu letzt</li>
-    </ul>
-    <img src="http://www.richti750.com/uploads/2/6/1/0/26102080/1408435903.png"><img src="http://www.richterswil.ch/de/images/41fde0a94104e.gif">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-sm-8">
+        <h1>Wann Wie Wo</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        <ul>
+          <li>Erstens</li>
+          <li>Dann Zweitens</li>
+          <li>Und zu letzt</li>
+        </ul>
+        <img src="http://www.richti750.com/uploads/2/6/1/0/26102080/1408435903.png"><img src="http://www.richterswil.ch/de/images/41fde0a94104e.gif">
+      </div>
+      <p></p>
+      <div class="col-sm-4">
+        <img src="http://placehold.it/350x350" class="img-responsive">
+      </div>
+    </div>
+  <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-sm-12">
+      <h1>SIe haben eine Frage? <br> <small>Setzen sie sich mit uns in Verbindung</small></h1>
+
+      <div class="well">
+
+        <%= bootstrap_form_for @message do |f| %>
+            <%= f.text_field :name %>
+            <%= f.email_field :email %>
+            <%= f.phone_field :phone %>
+            <%= f.text_field :subject %>
+            <%= f.text_area :message %>
+            <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <p></p>
-  <div class="col-sm-4">
-    <img src="http://placehold.it/350x350" class="img-responsive">
-  </div>
-</div>
 </div>

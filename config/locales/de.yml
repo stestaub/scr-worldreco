@@ -24,10 +24,20 @@ de:
 
   activerecord:
     models:
+      message:
+        one: Nachricht
+        other: Nachrichten
       registration:
         one: Anmeldung
         other: Anmeldungen
     attributes:
+      message:
+        name: Name
+        email: Email
+        phone: Telefon
+        message: Nachricht/Frage
+        subject: Betreff
+
       registration:
         first_name: Vorname
         last_name: Nachname

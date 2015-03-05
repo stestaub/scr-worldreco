@@ -6,7 +6,6 @@
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
         <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben.", error_summary: false %>
 
-
         <%= f.text_field :first_name, label: "Vorname" %>
         <%= f.text_field :last_name, label: "Nachname" %>
         <%= f.email_field :email, label: "Email", help: "Nach ihrer anmeldung werden sie eine Bestätigungsemail mit weiteren Informationen zum Anlass bekommen." %>
@@ -63,7 +62,7 @@
         <% end %>
 
         <%= f.form_group :definit, label: {text: "Definitive Anmeldung"} do %>
-            <%= f.check_box :confirm_age, label: "Ja ich melde mich definitv an"  %>
+            <%= f.check_box :definite, label: "Ja ich melde mich definitv an"  %>
         <% end %>
 
         <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekord versuch müssen sie volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor" do %>
@@ -79,7 +78,7 @@
         <% end %>
     <% end %>
 
-    <div class="alert alert-info">
+    <div class="alert alert-info col-md-offset-2 col-md-10">
       <h4>Hinweis zum Datenschutz</h4>
       <p>Ihre daten werden nur für interne zwecke benötigt, um sie zu kontaktieren und werden nicht an dritte weiter gegeben.</p>
     </div>

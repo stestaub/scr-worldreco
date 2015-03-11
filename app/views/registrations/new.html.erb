@@ -25,10 +25,10 @@
               <% 8.times do |index| %>
                   <tr>
                     <th><%= index + 12 %> Uhr</th>
-                    <td><%= @registration_counts[index][0] %></td>
-                    <td><%= @registration_counts[index][1] %></td>
-                    <td><%= @registration_counts[index][2] %></td>
-                    <td><%= @registration_counts[index][3] %></td>
+                    <td style="background-color: <%= time_slot_color(@registration_counts[index][0]) %>"><%= @registration_counts[index][0] %></td>
+                    <td style="background-color: <%= time_slot_color(@registration_counts[index][1]) %>"><%= @registration_counts[index][1] %></td>
+                    <td style="background-color: <%= time_slot_color(@registration_counts[index][2]) %>"><%= @registration_counts[index][2] %></td>
+                    <td style="background-color: <%= time_slot_color(@registration_counts[index][3]) %>"><%= @registration_counts[index][3] %></td>
                   </tr>
               <% end %>
             </table>

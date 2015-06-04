@@ -3,6 +3,6 @@ class RegistrationConfirmationMailer < ActionMailer::Base
 
   def registration_confirmation_mail(registration)
     @registration = registration
-    mail(to: @registration.email, subject: 'Anmeldebestätigung Guinness Welt Rekord')
+    mail(to: @registration.email, subject: '750 Jahre Richterswil / Anmeldebestätigung Guinness Weltrekordversuch')
   end
 end

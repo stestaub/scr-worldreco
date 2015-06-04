@@ -1,9 +1,9 @@
 class Registration < ActiveRecord::Base
   validate :time_slots_not_same
   validates :email, :phonenumber, :first_name, :last_name, presence: true
-  validates_uniqueness_of :email, scope: [:first_name, :last_name], message: "Sie scheinen sich bereits angemeldet zu haben"
-  validates :confirm_age, acceptance: { accept: true, message: "Sie müssen mindestens 18 sein um Teilnehmen zu können." }
-  validates :accept_agb, acceptance: { accept: true, message: "Bitte lesen und akzeptieren sie die Teilnahmebedingungen" }
+  validates_uniqueness_of :email, scope: [:first_name, :last_name], message: "Du scheinst dich bereits angemeldet zu haben."
+  validates :confirm_age, acceptance: { accept: true, message: "Du musst mindestens 18 Jahre alt sein, um teilnehmen zu können." }
+  validates :accept_agb, acceptance: { accept: true, message: "Bitte lese und akzeptiere die Teilnahmebedingungen." }
 
   def self.count_per_timeslot
     sql = "SELECT extract(hour FROM date_trunc('hour', timeslot1))::int AS hour_stump
@@ -24,7 +24,7 @@ class Registration < ActiveRecord::Base
     if self.timeslot1 == self.timeslot2 ||
       self.timeslot1 == self.timeslot3 ||
       self.timeslot2 == self.timeslot3
-      self.errors[:timeslots] << ("Sie können nicht mehrmals die gleiche Uhrzeit wählen")
+      self.errors[:timeslots] << ("Du kannst nicht mehrmals die gleiche Uhrzeit wählen.")
     end
   end
 end

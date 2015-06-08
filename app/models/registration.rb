@@ -33,6 +33,7 @@ class Registration < ActiveRecord::Base
     def validate_phone_number
       if self.phonenumber.blank? && self.mobile_number.blank?
         self.errors.add(:phonenumber, 'Gib bitte mindestens eine Telefonnummer an')
+        self.errors.add(:mobile_number, 'Gib bitte mindestens eine Telefonnummer an')
       end
     end
 end

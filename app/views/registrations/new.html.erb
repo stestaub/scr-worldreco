@@ -4,16 +4,16 @@
     <h1>Jetzt anmelden</h1>
 
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
-        <%= f.alert_message "Bitte überprüfen sie Ihre Eingaben.", error_summary: false %>
+        <%= f.alert_message "Bitte überprüfe deine Eingaben.", error_summary: false %>
 
         <%= f.text_field :first_name, label: "Vorname" %>
         <%= f.text_field :last_name, label: "Nachname" %>
-        <%= f.email_field :email, label: "Email", help: "Nach ihrer anmeldung werden sie eine Bestätigungsemail mit weiteren Informationen zum Anlass bekommen." %>
-        <%= f.telephone_field :phonenumber, label: "Telefonnummer", help: "Wir werden sie eventuell anrufen um ..." %>
+        <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
+        <%= f.telephone_field :phonenumber, label: "Telefon", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
 
-        <%= f.form_group :timeslots, label: {text: "Teilnahme Zeit"}, help: "Wir werden versuchen ihre wahl bestmöglich zu berücksichtigen." do %>
-            <h5>Anmeldungen: <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
-                                            title="Ich beschreibe um was es sich hier genau handelt"></i></h5>
+        <%= f.form_group :timeslots, label: {text: "Teilnahmezeit"}, help: "Wir werden versuchen, deine Wahl bestmöglich zu berücksichtigen." do %>
+            <h5>Gewünschte Einsatzzeit: <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
+                                            title="Die Tabelle zeigt, wie viele Teilnehmer/innen sich bereits angemeldet haben. Rot markierte Zeitschlitze sind bereits voll. "></i></h5>
             <table class="table table-bordered">
               <tr>
                 <th class="col-sm-1">h/m</th>
@@ -61,16 +61,12 @@
 
         <% end %>
 
-        <%= f.form_group :definit, label: {text: "Definitive Anmeldung"} do %>
-            <%= f.check_box :definite, label: "Ja ich melde mich definitv an"  %>
-        <% end %>
-
-        <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekord versuch müssen sie volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor" do %>
-            <%= f.check_box :confirm_age, label: "Ich bestätige dass ich über 18 bin"  %>
+        <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekordversuch musst Du volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor." do %>
+            <%= f.check_box :confirm_age, label: "Ich bestätige, dass ich über 18 Jahre alt bin."  %>
         <% end %>
 
         <%= f.form_group :accept_agb, label: {text: "Teilnahmebedingungen"}, help: "" do %>
-            <%= f.check_box :accept_agb, label: ('Ich bestätige dass ich die <a href="#" data-toggle="modal" data-target=".bs-terms-modal-lg">Teilnahmebedingungen</a> gelesen habe und damit einverstanden bin').html_safe  %>
+            <%= f.check_box :accept_agb, label: ('Ich bestätige, dass ich die <a href="#" data-toggle="modal" data-target=".bs-terms-modal-lg">Teilnahmebedingungen</a> gelesen habe und damit einverstanden bin.').html_safe  %>
         <% end %>
 
         <%= f.form_group :actions do %>
@@ -80,7 +76,7 @@
 
     <div class="alert alert-info col-md-offset-2 col-md-10">
       <h4>Hinweis zum Datenschutz</h4>
-      <p>Ihre daten werden nur für interne zwecke benötigt, um sie zu kontaktieren und werden nicht an dritte weiter gegeben.</p>
+      <p>Deine persönlichen Daten werden nur dazu verwendet, dich im Zusammenhang mit dem Rekordversuch zu kontaktieren. Sie werden nicht an Dritte weiter gegeben.</p>
     </div>
   </div>
 </div>
@@ -90,7 +86,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Teilnahme Bedingungen</h4>
+        <h4 class="modal-title" id="myModalLabel">Teilnahmebedingungen</h4>
       </div>
       <div class="modal-body">
         <h2>1. Gegenstand</h2>

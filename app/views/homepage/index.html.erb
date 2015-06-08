@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: -20px">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" style="margin-top: -20px">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -6,14 +6,16 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <%= image_tag 'row_background.jpg' %>
+      <%= image_tag 'row_background2.jpg' %>
       <div class="container">
         <div class="carousel-caption">
-          <h1>Ein neuer Weltrekord, aufgestellt durch die Einwohner/innen von Richterswil und Umgebung</h1>
+          <h1>Ein neuer Guinness Weltrekord</h1>
+          <h1>aufgestellt durch <br>die Einwohner/innen von Richterswil und Umgebung</h1>
+          <hr>
           <p class="lead">The most people to row 100m on a Concept II Indoor Rower in an 8-hour relay</p>
           <p class="lead">(Die grösste Anzahl Personen, die in einer 8-stündigen Stafette je 100m auf einem Concept II Rudergerät rudern)</p>
-          <p class="lead">Unser Ziel: mindestens 750 Teilnehmer/innen</p>
           <p><%= link_to "Jetzt anmelden", new_registration_path, class: "btn btn-primary btn-lg" %></p>
+          <p class="lead">Unser Ziel: mindestens 750 Teilnehmer/innen</p>
         </div>
       </div>
     </div>
@@ -22,11 +24,9 @@
       <div class="container">
         <div class="carousel-caption">
           <h1>Richterswil - das Dorf der Sportlerinnen und Sportler</h1>
-          <h1>Wir brauchen deine Unterstützung</h1>
-          <p class="lead">Datum: Samstag, 12. September 2015</p>
-          <p class="lead">Zeit: 12:00 bis 20:00 Uhr</p>
-          <p class="lead">Ort: Zelt 2 an der Chüngengass in Richterswil</p>
+          <h1>Wir brauchen deine Unterstützung!</h1>
           <p><%= link_to "Jetzt anmelden", new_registration_path, class: "btn btn-primary btn-lg" %></p>
+          <p class="lead">Unser Ziel: mindestens 750 Teilnehmer/innen</p>
         </div>
       </div>
     </div>
@@ -46,13 +46,10 @@
 <div class="container">
     <div class="row featurette">
       <div class="col-sm-8">
-        <h1>Wann Wie Wo</h1>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <ul>
-          <li>Erstens</li>
-          <li>Dann Zweitens</li>
-          <li>Und zu letzt</li>
-        </ul>
+        <h1>Wann & Wo</h1>
+        <p class="lead">Datum: Samstag, 12. September 2015</p>
+        <p class="lead">Zeit: 12:00 bis 20:00 Uhr</p>
+        <p class="lead">Ort: Zelt 2 an der Chüngengass in Richterswil</p>
         <img src="http://www.richti750.com/uploads/2/6/1/0/26102080/1408435903.png"><img src="http://www.richterswil.ch/de/images/41fde0a94104e.gif">
       </div>
       <p></p>
@@ -63,6 +60,34 @@
   <hr class="featurette-divider">
   <div class="row featurette">
     <div class="col-sm-12">
+
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <% faq_items.each_with_index do |item, index| %>
+
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= index %>" aria-expanded="false" aria-controls="collapseOne">
+                    <%= item[0] %>
+                  </a>
+                </h4>
+              </div>
+              <div id="collapse<%= index %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  <%= item[1] %>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+
+
+      </div>
+
+
+
+
       <h1>Wer kann mitmachen? </h1>
       <p>-> Alle erwachsenen Personen (ab 18 Jahre).</p>
       <h1>Muss ich rudern können? </h1>

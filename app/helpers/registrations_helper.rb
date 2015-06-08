@@ -1,8 +1,10 @@
 module RegistrationsHelper
 
   def time_slot_color(regCount)
-    full = '#ff0000'
-    half = '#0000ff'
+    full = '#F2DEDE'
+    # half = '#D9EDF7'
+    half = '#fff'
+
     empty = '#ffffff'
 
     limit = 2

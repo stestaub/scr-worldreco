@@ -13,7 +13,7 @@
         <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
         <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
 
-        <%= f.form_group :timeslots, label: {text: "Gewünschte Teilnahmezeit"}, do %>
+        <%= f.form_group :timeslots, label: {text: "Gewünschte Teilnahmezeit"} do %>
             <div class="row">
               <div class="col-md-12">
                 <%= f.time_select_without_bootstrap :timeslot1, {

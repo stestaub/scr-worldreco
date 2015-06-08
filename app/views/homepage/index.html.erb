@@ -1,9 +1,8 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" style="margin-top: -20px">
   <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-  </ol>
+  <!--<ol class="carousel-indicators">-->
+    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+  <!--</ol>-->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <%= image_tag 'row_background2.jpg' %>
@@ -12,54 +11,48 @@
           <h1>Ein neuer Guinness Weltrekord</h1>
           <h1>aufgestellt durch <br>die Einwohner/innen von Richterswil und Umgebung</h1>
           <hr>
-          <p class="lead">The most people to row 100m on a Concept II Indoor Rower in an 8-hour relay</p>
-          <p class="lead">(Die grösste Anzahl Personen, die in einer 8-stündigen Stafette je 100m auf einem Concept II Rudergerät rudern)</p>
+          <h1>Mach auch Du mit!</h1>
           <p><%= link_to "Jetzt anmelden", new_registration_path, class: "btn btn-primary btn-lg" %></p>
-          <p class="lead">Unser Ziel: mindestens 750 Teilnehmer/innen</p>
+          <p class="lead">Das Ziel: mindestens 750 Teilnehmer/innen</p>
         </div>
       </div>
     </div>
-    <div class="item">
-      <%= image_tag 'row_background.jpg' %>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1>Richterswil - das Dorf der Sportlerinnen und Sportler</h1>
-          <h1>Wir brauchen deine Unterstützung!</h1>
-          <p><%= link_to "Jetzt anmelden", new_registration_path, class: "btn btn-primary btn-lg" %></p>
-          <p class="lead">Unser Ziel: mindestens 750 Teilnehmer/innen</p>
-        </div>
-      </div>
-    </div>
+
   </div>
 
 
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">-->
+    <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+    <!--<span class="sr-only">Previous</span>-->
+  <!--</a>-->
+  <!--<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">-->
+    <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+    <!--<span class="sr-only">Next</span>-->
+  <!--</a>-->
 </div>
 
 <div class="container">
     <div class="row featurette">
-      <div class="col-sm-8">
-        <h1>Wann & Wo</h1>
-        <p class="lead">Datum: Samstag, 12. September 2015</p>
-        <p class="lead">Zeit: 12:00 bis 20:00 Uhr</p>
-        <p class="lead">Ort: Zelt 2 an der Chüngengass in Richterswil</p>
+      <div class="col-sm-4">
+        <h1>Der Rekordversuch</h1>
+        <p class="lead">The most people to row 100m on a Concept II Indoor Rower in an 8-hour relay</p>
+        <p class="lead">(Die grösste Anzahl Personen, die in einer 8-stündigen Stafette je 100m auf einem Concept II Rudergerät rudern)</p>
+      </div>
+      <div class="col-sm-4">
         <img src="http://www.richti750.com/uploads/2/6/1/0/26102080/1408435903.png"><img src="http://www.richterswil.ch/de/images/41fde0a94104e.gif">
       </div>
-      <p></p>
       <div class="col-sm-4">
-        <img src="http://placehold.it/350x350" class="img-responsive">
+        <h1>Wann & Wo</h1>
+        <p class="lead"><strong>Datum:</strong> Samstag, 12. September 2015</p>
+        <p class="lead"><strong>Zeit:</strong> 12:00 bis 20:00 Uhr</p>
+        <p class="lead"><strong>Ort:</strong> Zelt 2 an der Chüngengass in Richterswil</p>
       </div>
     </div>
-  <hr class="featurette-divider">
+
   <div class="row featurette">
+
     <div class="col-sm-12">
+      <h1>Fragen und Antworten (FAQ)</h1>
 
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -129,11 +122,10 @@
       <p>-> Organisator ist der Seeclub Richterswil. Dies ist unser Beitrag zu 750 Jahre Richterswil. Ein Anlass von der Bevölkerung für die Bevölkerung.</p>
     </div>
   </div>
-  
-  <hr class="featurette-divider">
+
   <div class="row featurette">
     <div class="col-sm-12">
-      <h1>Du hast eine Frage? <br> <small>Setze dich mit uns in Verbindung:</small></h1>
+      <h1>Du hast eine Frage?</h1>
 
       <div class="well">
 
@@ -142,7 +134,7 @@
             <%= f.email_field :email %>
             <%= f.phone_field :phone %>
             <%= f.text_field :subject %>
-            <%= f.text_area :message %>
+            <%= f.text_area :message, rows: 10 %>
             <%= f.submit %>
         <% end %>
       </div>

@@ -37,7 +37,7 @@ de:
     attributes:
       message:
         name: Name
-        email: Email
+        email: E-Mail
         phone: Telefon
         message: Nachricht/Frage
         subject: Betreff
@@ -45,7 +45,7 @@ de:
       registration:
         first_name: Vorname
         last_name: Nachname
-        email: Email
+        email: E-Mail
         timeslot1: Prio 1
         timeslot2: Prio 2
         timeslot3: Prio 3

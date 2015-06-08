@@ -22,6 +22,10 @@
 de:
   hello: "Hello world"
 
+  helpers:
+    submit:
+      create: "%{model} absenden"
+
   activerecord:
     models:
       message:

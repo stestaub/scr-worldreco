@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get '/' => 'homepage#index'
-  get 'impressum' => 'homepage#impressum'
 
   resources :registrations
   resources :messages

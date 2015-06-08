@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
   <div class="col-sm-12">
-    <h1>Jetzt anmelden</h1>
+    <h1>Anmeldung zur Teilnahme am Weltrekordversuch</h1>
 
     <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
         <%= f.alert_message "Bitte überprüfe deine Eingaben.", error_summary: false %>
@@ -13,34 +13,16 @@
         <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
         <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
 
-        <%= f.form_group :timeslots, label: {text: "Gewünschte Einsatzzeit"}, help: "Wir werden versuchen, deine Wahl bestmöglich zu berücksichtigen." do %>
+        <%= f.form_group :timeslots, label: {text: "Gewünschte Teilnahmezeit"}, do %>
             <div class="row">
-              <div class="col-md-4">
-                <%= f.time_select :timeslot1, {label: "Prio 1",
-                                               label_col: "col-sm-3",
-                                               control_col: "col-sm-7",
-                                               start_hour: 12,
-                                               end_hour: 20,
-                                               minute_step: 15} %>
-              </div>
-              <div class="col-md-4">
-                <%= f.time_select :timeslot2, {label: "Prio 2",
-                                               label_col: "col-sm-3",
-                                               control_col: "col-sm-7",
-                                               start_hour: 12,
-                                               end_hour: 20,
-                                               minute_step: 15} %>
-              </div>
-              <div class="col-md-4">
-                <%= f.time_select :timeslot3, {label: "Prio 3",
-                                               label_col: "col-sm-3",
-                                               control_col: "col-sm-7",
+              <div class="col-md-12">
+                <%= f.time_select_without_bootstrap :timeslot1, {
                                                start_hour: 12,
                                                end_hour: 20,
                                                minute_step: 15} %>
               </div>
             </div>
-            <h5>Bereits gebuchte Zeiten <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
+            <h5>Aktueller Stand der Anmeldungen <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
                    title="Die Tabelle zeigt, wie viele Teilnehmer/innen sich bereits angemeldet haben. Rot markierte Zeitschlitze sind bereits voll. "></i></h5>
             <table class="table table-bordered">
               <tr>

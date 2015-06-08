@@ -9,7 +9,8 @@
         <%= f.text_field :first_name, label: "Vorname" %>
         <%= f.text_field :last_name, label: "Nachname" %>
         <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
-        <%= f.telephone_field :phonenumber, label: "Telefon", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
+        <%= f.telephone_field :phonenumber, label: "Telefon P/G", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
+        <%= f.telephone_field :mobile_number, label: "Telefon M" %>
 
         <%= f.form_group :timeslots, label: {text: "Teilnahmezeit"}, help: "Wir werden versuchen, deine Wahl bestmöglich zu berücksichtigen." do %>
             <h5>Gewünschte Einsatzzeit: <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"

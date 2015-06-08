@@ -23,6 +23,7 @@ class RegistrationsController < ApplicationController
                                            :timeslot1,
                                            :timeslot2,
                                            :timeslot3,
+                                           :mobile_number,
                                            :phonenumber, :accept_agb, :confirm_age)
     end
 end

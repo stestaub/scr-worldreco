@@ -13,7 +13,7 @@
         <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
         <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
 
-        <%= f.form_group :timeslots, label: {text: "Gewünschte Teilnahmezeit"} do %>
+        <%= f.form_group :timeslots, label: {text: "Gewünschte Startzeit"} do %>
             <div class="row">
               <div class="col-md-12">
                 <%= f.time_select_without_bootstrap :timeslot1, {
@@ -60,7 +60,7 @@
 
     <div class="alert alert-info col-md-offset-2 col-md-10">
       <h4>Hinweis zum Datenschutz</h4>
-      <p>Deine persönlichen Daten werden nur dazu verwendet, dich im Zusammenhang mit dem Rekordversuch zu kontaktieren. Sie werden nicht an Dritte weiter gegeben.</p>
+      <p>Deine persönlichen Daten werden nur dazu verwendet, dich im Zusammenhang mit dem Rekordversuch zu kontaktieren und dich im Teilnehmerjournal aufzuführen. Sie werden ausser an Guinness nicht an Dritte weiter gegeben.</p>
     </div>
   </div>
 </div>

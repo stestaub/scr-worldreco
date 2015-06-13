@@ -25,7 +25,7 @@ class Registration < ActiveRecord::Base
     if self.timeslot1 == self.timeslot2 ||
       self.timeslot1 == self.timeslot3 ||
       self.timeslot2 == self.timeslot3
-      self.errors[:timeslots] << ("Du kannst nicht mehrmals die gleiche Uhrzeit wählen.")
+      self.errors[:timeslots] << ("Du kannst nicht mehrmals die gleiche Startzeit wählen.")
     end
   end
 

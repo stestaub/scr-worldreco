@@ -5,14 +5,41 @@
     <title></title>
 </head>
 <body>
-    <h1>750 Jahre Richterswil / Anmeldebestätigung Guinness Weltrekordversuch</h1>
+    <h1>750 Jahre Richterswil: Deine Anmeldung für den Guinness Weltrekordversuch am 12.9.2015</h1>
     <p>
-      Vielen Dank für deine Anmeldung zur Teilnahme am Weltrekordversuch. Beachte bitte die unten
-      stehenden Informationen.
+      Liebe/r [vorname]
     </p>
-    <h2>Informationen zum Ablauf.</h2>
     <p>
-      Es läuft wie folgt ab:
+      Herzlichen Dank für deine Anmeldung zur Teilnahme am Weltrekordversuch!
+    </p>
+    <p>
+        Wir haben deine Anmeldedaten wie folgt registriert: <br>
+        Vorname: <%= @registration.first_name %><br>
+        Name: <%= @registration.last_name %><br>
+        Startzeit: <%= @registration.timeslot1 %>
+    </p>
+    <p>
+        Es freut uns sehr, dass Du mithelfen willst, der ganzen Welt zu zeigen, dass Richterswil ein aktives und sportliches Dorf ist.<br>
+        Ausserdem trägst Du zu dazu bei, dass die 750-Jahr-Feier zu einem Anlass wird, von dem man noch lange reden wird.
+    </p>
+    <p>
+      Du kannst deine Anmeldung jederzeit bearbeiten oder löschen (was wir natürlich sehr bedauern würden).<br>
+      Klicke dazu einfach auf diesen Link: <%= link_to "Login", ???, class: "???" %>.
+    </p>
+    <p>
+        <strong>WICHTIG:</strong><br>
+        - Falls Du aus irgendeinem Grund an der Teilnahme verhindert bist, lösche bitte deine Anmeldung (<%= link_to "Login", ???, class: "???" %>).<br>
+        - Wenn du Fragen zum Anlass hast,  kontaktiere uns bitte per Mail (rekord@seeclub-richterswil.ch) oder in dringenden Fällen per Telefon (044 …).<br>
+        - Bei einer kurzfristigen Verhinderung wäre es toll, wenn Du für einen Ersatz sorgen könntest.<br>
+        - Lies bitte das Dokument im Anhang (Specific Guidelines Pack) aufmerksam durch.
+        - <strong>Triff bitte pünktlich, d.h. mindestens 15 Minuten vor deiner Startzeit, im Zelt ein.</strong>
+    </p>
+    <p>
+        Rudersportliche Grüsse
+    </p>
+    <p>
+        Seeclub Richterswil
+        OK Weltrekordversuch
     </p>
 </body>
 </html>

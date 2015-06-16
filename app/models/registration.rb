@@ -1,8 +1,7 @@
 class Registration < ActiveRecord::Base
-  validate :time_slots_not_same
-  validates :email, :first_name, :last_name, presence: true
+  validates :email, :first_name, :last_name, :timeslot1, presence: true
   validate :validate_phone_number
-  validates_uniqueness_of :email, scope: [:first_name, :last_name], message: "Du scheinst dich bereits angemeldet zu haben."
+  validates_uniqueness_of :email, message: "Du scheinst dich bereits angemeldet zu haben, diese Email Adresse ist bereits vergeben"
   validates :confirm_age, acceptance: { accept: true, message: "Du musst mindestens 18 Jahre alt sein, um teilnehmen zu können." }
   validates :accept_agb, acceptance: { accept: true, message: "Bitte lese und akzeptiere die Teilnahmebedingungen." }
 
@@ -19,14 +18,6 @@ class Registration < ActiveRecord::Base
       time_grid[row['hour_stump'].to_i - 12][row['15min_slot'].to_i] = row['count'].to_i
     end
     time_grid
-  end
-
-  def time_slots_not_same
-    if self.timeslot1 == self.timeslot2 ||
-      self.timeslot1 == self.timeslot3 ||
-      self.timeslot2 == self.timeslot3
-      self.errors[:timeslots] << ("Du kannst nicht mehrmals die gleiche Startzeit wählen.")
-    end
   end
 
   private

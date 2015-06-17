@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0983d74-0144-4526-82a7-c99ba1fc7b70" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/participant.rb" afterPath="$PROJECT_DIR$/app/models/participant.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20150617224753_add_devise_to_participants.rb" afterPath="$PROJECT_DIR$/db/migrate/20150617224753_add_devise_to_participants.rb" />
     </list>
     <ignored path="scr-worldrecord.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -102,8 +100,8 @@
       <file leaf-file-name="20150617224753_add_devise_to_participants.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20150617224753_add_devise_to_participants.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.077586204" vertical-offset="0" max-vertical-offset="990">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="34" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.077586204" vertical-offset="0" max-vertical-offset="972">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -1411,8 +1409,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20150617224753_add_devise_to_participants.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.077586204" vertical-offset="0" max-vertical-offset="990">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="34" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.077586204" vertical-offset="0" max-vertical-offset="972">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
           <folding />
         </state>
       </provider>

@@ -18,6 +18,7 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
 gem 'devise'
+gem 'devise-i18n'
 gem 'activeadmin', github: 'activeadmin'
 
 # Use jquery as the JavaScript library

@@ -5,6 +5,7 @@ class ParticipantsController < ApplicationController
     @participant = Participant.new registration_params
     if @participant.save
       sign_in @participant
+      RegistrationConfirmationMailer.registration_confirmation_mail(@participant).deliver
       render 'show'
     else
       @participant_count = Participant.count_per_timeslot

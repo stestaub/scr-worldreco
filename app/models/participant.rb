@@ -1,7 +1,7 @@
 class Participant < ActiveRecord::Base
   self.table_name = 'registrations'
 
-  devise :database_authenticatable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :rememberable, :trackable, :validatable, :recoverable
 
   validates :email, :first_name, :last_name, :timeslot1, presence: true
   validate :validate_phone_number

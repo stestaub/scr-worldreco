@@ -9,6 +9,8 @@
         <%= f.text_field :first_name, label: "Vorname" %>
         <%= f.text_field :last_name, label: "Nachname" %>
         <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
+        <%= f.password_field :password, label: "Passwort" %>
+        <%= f.password_field :password_confirmation, label: "Passwort widerholen", help: "Geben Sie ein Passwort an um Ihre Anmeldung später zu bearbeiten oder zu löschen" %>
 
         <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
         <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>

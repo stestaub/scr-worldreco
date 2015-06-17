@@ -1,10 +1,12 @@
 
 Rails.application.routes.draw do
-
+  devise_for :participants, controllers: { registrations: 'participants'}
   devise_for :admins, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  get '/' => 'homepage#index'
+  root to: 'homepage#index'
+
+  get '/meine-anmeldung' => 'participants#show',  as: :participant_root
 
   resources :participants
   resources :messages

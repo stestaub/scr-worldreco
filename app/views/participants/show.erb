@@ -1,15 +1,18 @@
-<div class="row">
-  <div class="col-sm-12">
-    <h1>Vielen Dank für deine Anmeldung</h1>
-    <p>Die untenstehenden Details sowie weitere Informationen werden dir an die angegebene Mailadresse gesendet.</p>
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Vielen Dank für deine Anmeldung</h1>
+      <p>Die untenstehenden Details sowie weitere Informationen werden dir an die angegebene Mailadresse gesendet.</p>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-sm-12">
-    <h3>Details deiner Anmeldung</h3>
-    <p><strong>Vorname: </strong><%= @participant.first_name %></p>
-    <p><strong>Nachname: </strong><%= @participant.last_name %></p>
-    <p><strong>E-Mail: </strong><%= @participant.email %></p>
-    <p><strong>Startzeit: </strong><%= @participant.timeslot1 %></p>
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Details deiner Anmeldung</h3>
+      <p><strong>Vorname: </strong><%= @participant.first_name %></p>
+      <p><strong>Nachname: </strong><%= @participant.last_name %></p>
+      <p><strong>E-Mail: </strong><%= @participant.email %></p>
+      <p><strong>Startzeit: </strong><%= @participant.timeslot1 %></p>
+    </div>
   </div>
 </div>

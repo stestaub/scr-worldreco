@@ -1,6 +1,8 @@
 class Participant < ActiveRecord::Base
   self.table_name = 'registrations'
 
+  devise :database_authenticatable, :rememberable, :trackable, :validatable
+
   validates :email, :first_name, :last_name, :timeslot1, presence: true
   validate :validate_phone_number
   validates_uniqueness_of :email, message: "Du scheinst dich bereits angemeldet zu haben, diese Email Adresse ist bereits vergeben"

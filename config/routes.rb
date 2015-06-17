@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   root to: 'homepage#index'
 
   get '/meine-anmeldung' => 'participants#show',  as: :participant_root
+  get '/meine-anmeldung/bearbeiten' => 'participants#edit',  as: :edit_participant
 
-  resources :participants
+  resources :participants, only: [:new, :update, :destroy, :create]
   resources :messages
 
 

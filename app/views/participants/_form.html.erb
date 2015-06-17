@@ -1,0 +1,59 @@
+<%= bootstrap_form_for(@participant, layout: :horizontal) do |f| %>
+    <%= f.alert_message "Bitte überprüfe deine Eingaben.", error_summary: false %>
+
+    <%= f.text_field :first_name, label: "Vorname" %>
+    <%= f.text_field :last_name, label: "Nachname" %>
+    <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
+    <% unless edit_form %>
+        <%= f.password_field :password, label: "Passwort" %>
+        <%= f.password_field :password_confirmation, label: "Passwort widerholen", help: "Gebe ein Passwort an um deine Anmeldung später zu bearbeiten oder zu löschen" %>
+    <% end %>
+    <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
+    <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
+
+    <%= f.form_group :timeslots, label: {text: "Gewünschte Startzeit"} do %>
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.time_select_without_bootstrap :timeslot1, {
+                                                                  start_hour: 12,
+                                                                  end_hour: 20,
+                                                                  minute_step: 15} %>
+          </div>
+        </div>
+        <h5>Aktueller Stand der Anmeldungen <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right"
+                                               title="Die Tabelle zeigt, wie viele Teilnehmer/innen sich bereits angemeldet haben. Rot markierte Zeitschlitze sind bereits voll. "></i></h5>
+        <table class="table table-bordered">
+          <tr>
+            <th class="col-sm-1">h/m</th>
+            <th>00 - 15</th>
+            <th>15 - 30</th>
+            <th>30 - 45</th>
+            <th>45 - 00</th>
+          </tr>
+          <% 8.times do |index| %>
+              <tr>
+                <th><%= index + 12 %> Uhr</th>
+                <td style="background-color: <%= time_slot_color(@participant_count[index][0]) %>"><%= @participant_count[index][0] %></td>
+                <td style="background-color: <%= time_slot_color(@participant_count[index][1]) %>"><%= @participant_count[index][1] %></td>
+                <td style="background-color: <%= time_slot_color(@participant_count[index][2]) %>"><%= @participant_count[index][2] %></td>
+                <td style="background-color: <%= time_slot_color(@participant_count[index][3]) %>"><%= @participant_count[index][3] %></td>
+              </tr>
+          <% end %>
+        </table>
+
+    <% end %>
+
+    <% unless edit_form %>
+        <%= f.form_group :confirm_age, label: {text: "Alter"}, help: "Für die Teilnahme am Rekordversuch musst Du volljährig sein. Die Organisatoren behalten sich eine Ausweiskontrolle vor." do %>
+            <%= f.check_box :confirm_age, label: "Ich bestätige, dass ich über 18 Jahre alt bin."  %>
+        <% end %>
+
+        <%= f.form_group :accept_agb, label: {text: "Teilnahmebedingungen"}, help: "" do %>
+            <%= f.check_box :accept_agb, label: ('Ich bestätige, dass ich die <a href="#" data-toggle="modal" data-target=".bs-terms-modal-lg">Teilnahmebedingungen</a> gelesen habe und damit einverstanden bin.').html_safe  %>
+        <% end %>
+    <% end %>
+
+    <%= f.form_group :actions do %>
+        <%= f.submit (edit_form ? "Änderungen Speichern":"Anmelden"), class: "btn btn-success" %>
+    <% end %>
+<% end %>

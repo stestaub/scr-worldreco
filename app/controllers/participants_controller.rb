@@ -1,5 +1,5 @@
 class ParticipantsController < ApplicationController
-  before_action :authenticate_participant!, only: :show
+  before_action :authenticate_participant!, only: [:show, :edit, :update, :destroy]
 
   def create
     @participant = Participant.new registration_params
@@ -11,6 +11,29 @@ class ParticipantsController < ApplicationController
       render 'new'
     end
 
+  end
+
+  def update
+    @participant = current_participant
+    if @participant.update_attributes(registration_params)
+      flash[:success] = "Deine Daten wurden erfolgreich aktuallisiert"
+      redirect_to participant_root_path
+    else
+      @participant_count = Participant.count_per_timeslot
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @participant = current_participant
+    @participant.destroy
+    flash[:info] = "Schade dass du nicht dabei sein kannst. Falls du dich doch noch umentscheiden, kannst du dich jeder Zeit wieder anmelden"
+    redirect_to root_path
+  end
+
+  def edit
+    @participant_count = Participant.count_per_timeslot
+    @participant = current_participant
   end
 
   def show

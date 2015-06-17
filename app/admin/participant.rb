@@ -1,4 +1,4 @@
-ActiveAdmin.register Registration do
+ActiveAdmin.register Participant do
 
 
   # See permitted parameters documentation:
@@ -8,8 +8,6 @@ ActiveAdmin.register Registration do
                 :last_name,
                 :email,
                 :timeslot1,
-                :timeslot2,
-                :timeslot3,
                 :phonenumber, :accept_agb, :confirm_age
   #
   # or

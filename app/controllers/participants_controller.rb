@@ -1,23 +1,23 @@
-class RegistrationsController < ApplicationController
+class ParticipantsController < ApplicationController
   def create
-    @registration = Registration.new registration_params
-    if @registration.save
+    @participant = Participant.new registration_params
+    if @participant.save
       render 'show'
     else
-      @registration_counts = Registration.count_per_timeslot
+      @participant_count = Participant.count_per_timeslot
       render 'new'
     end
 
   end
 
   def new
-    @registration = Registration.new
-    @registration_counts = Registration.count_per_timeslot
+    @participant = Participant.new
+    @participant_count = Participant.count_per_timeslot
   end
 
   private
     def registration_params
-      params.require(:registration).permit(:first_name,
+      params.require(:participant).permit(:first_name,
                                            :last_name,
                                            :email,
                                            :timeslot1,

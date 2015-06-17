@@ -1,4 +1,4 @@
-module RegistrationsHelper
+module ParticipantsHelper
 
   def time_slot_color(regCount)
     full = '#F2DEDE'

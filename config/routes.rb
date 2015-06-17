@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/' => 'homepage#index'
 
-  resources :registrations
+  resources :participants
   resources :messages
 
 

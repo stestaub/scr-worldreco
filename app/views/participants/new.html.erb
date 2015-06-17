@@ -3,7 +3,7 @@
   <div class="col-sm-12">
     <h1>Anmeldung zur Teilnahme am Weltrekordversuch</h1>
 
-    <%= bootstrap_form_for(@registration, layout: :horizontal) do |f| %>
+    <%= bootstrap_form_for(@participant, layout: :horizontal) do |f| %>
         <%= f.alert_message "Bitte überprüfe deine Eingaben.", error_summary: false %>
 
         <%= f.text_field :first_name, label: "Vorname" %>
@@ -35,10 +35,10 @@
               <% 8.times do |index| %>
                   <tr>
                     <th><%= index + 12 %> Uhr</th>
-                    <td style="background-color: <%= time_slot_color(@registration_counts[index][0]) %>"><%= @registration_counts[index][0] %></td>
-                    <td style="background-color: <%= time_slot_color(@registration_counts[index][1]) %>"><%= @registration_counts[index][1] %></td>
-                    <td style="background-color: <%= time_slot_color(@registration_counts[index][2]) %>"><%= @registration_counts[index][2] %></td>
-                    <td style="background-color: <%= time_slot_color(@registration_counts[index][3]) %>"><%= @registration_counts[index][3] %></td>
+                    <td style="background-color: <%= time_slot_color(@participant_count[index][0]) %>"><%= @participant_count[index][0] %></td>
+                    <td style="background-color: <%= time_slot_color(@participant_count[index][1]) %>"><%= @participant_count[index][1] %></td>
+                    <td style="background-color: <%= time_slot_color(@participant_count[index][2]) %>"><%= @participant_count[index][2] %></td>
+                    <td style="background-color: <%= time_slot_color(@participant_count[index][3]) %>"><%= @participant_count[index][3] %></td>
                   </tr>
               <% end %>
             </table>

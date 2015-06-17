@@ -1,9 +1,7 @@
 class Participant < ActiveRecord::Base
+  self.table_name = 'registrations'
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable
-  self.table_name = 'registrations'
 
   devise :database_authenticatable, :rememberable, :trackable, :validatable, :recoverable
 

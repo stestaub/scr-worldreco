@@ -34,8 +34,8 @@ class AddDeviseToParticipants < ActiveRecord::Migration
       # t.timestamps
     end
 
-    add_index :participants, :email,                unique: true
-    add_index :participants, :reset_password_token, unique: true
+    add_index :registrations, :email,                unique: true
+    add_index :registrations, :reset_password_token, unique: true
     # add_index :participants, :confirmation_token,   unique: true
     # add_index :participants, :unlock_token,         unique: true
   end

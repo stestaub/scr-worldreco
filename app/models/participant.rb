@@ -21,7 +21,7 @@ class Participant < ActiveRecord::Base
     timeslots = ActiveRecord::Base.connection.execute(sql)
     time_grid = (0..8).collect { |i| [0, 0, 0, 0]  }
     timeslots.each do |row|
-      time_grid[row['hour_stump'].to_i - 12][row['15min_slot'].to_i] = row['count'].to_i
+      time_grid[row['hour_stump'].to_i - 12][row['min15_slot'].to_i] = row['count'].to_i
     end
     time_grid
   end

@@ -6,7 +6,7 @@
     <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
     <% unless edit_form %>
         <%= f.password_field :password, label: "Passwort" %>
-        <%= f.password_field :password_confirmation, label: "Passwort widerholen", help: "Gebe ein Passwort an um deine Anmeldung später zu bearbeiten oder zu löschen" %>
+        <%= f.password_field :password_confirmation, label: "Passwort wiederholen", help: "Gebe ein Passwort an um deine Anmeldung später zu bearbeiten oder zu löschen" %>
     <% end %>
     <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
     <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
@@ -16,7 +16,7 @@
           <div class="col-md-12">
             <%= f.time_select_without_bootstrap :timeslot1, {
                                                                   start_hour: 12,
-                                                                  end_hour: 20,
+                                                                  end_hour: 19,
                                                                   minute_step: 15} %>
           </div>
         </div>
@@ -24,7 +24,7 @@
                                                title="Die Tabelle zeigt, wie viele Teilnehmer/innen sich bereits angemeldet haben. Rot markierte Zeitschlitze sind bereits voll. "></i></h5>
         <table class="table table-bordered">
           <tr>
-            <th class="col-sm-1">h/m</th>
+            <th class="col-sm-1"></th>
             <th>00 - 15</th>
             <th>15 - 30</th>
             <th>30 - 45</th>

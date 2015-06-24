@@ -19,11 +19,17 @@
         <dt>E-Mail:</dt>
         <dd><%= @participant.email %></dd>
 
+        <dt>Telefon P/G:</dt>
+        <dd><%= @participant.phonenumber %></dd>
+
+        <dt>Telefon M.:</dt>
+        <dd><%= @participant.mobile_number %></dd>
+
         <dt>Startzeit:</dt>
-        <dd><%= @participant.timeslot1 %></dd>
+        <dd>20.06.2015 <strong><%= @participant.timeslot1.strftime('%H:%M') %></strong></dd>
       </dl>
       <%= link_to 'Meine Daten ändern', edit_participant_path, class: 'btn btn-default' %>
-      <%= link_to 'Meine Anmeldung löschen', participant_path(current_participant), class: 'pull-right', method: :delete, data: {confirm: 'Sind Sie sicher dass Sie Ihre Anmeldung löschen wollen? Ihre Daten werden dabei unwiederruflich gelöscht.'} %>
+      <%= link_to 'Meine Anmeldung löschen', participant_path(current_participant), class: 'btn btn-default', method: :delete, data: {confirm: 'Sind Sie sicher dass Sie Ihre Anmeldung löschen wollen? Ihre Daten werden dabei unwiederruflich gelöscht.'} %>
     </div>
   </div>
 </div>

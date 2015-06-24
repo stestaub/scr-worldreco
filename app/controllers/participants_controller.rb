@@ -18,6 +18,7 @@ class ParticipantsController < ApplicationController
     @participant = current_participant
     if @participant.update_attributes(registration_params)
       flash[:success] = "Deine Daten wurden erfolgreich aktuallisiert"
+      RegistrationConfirmationMailer.registration_confirmation_mail(@participant).deliver
       redirect_to participant_root_path
     else
       @participant_count = Participant.count_per_timeslot

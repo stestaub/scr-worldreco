@@ -7,7 +7,7 @@
 <body>
     <h1>750 Jahre Richterswil: Deine Anmeldung für den Guinness Weltrekordversuch am 12.9.2015</h1>
     <p>
-      Liebe/r [vorname]
+      Liebe/r <%= @registration.first_name %><br>
     </p>
     <p>
       Herzlichen Dank für deine Anmeldung zur Teilnahme am Weltrekordversuch!
@@ -16,6 +16,8 @@
         Wir haben deine Anmeldedaten wie folgt registriert: <br>
         Vorname: <%= @registration.first_name %><br>
         Name: <%= @registration.last_name %><br>
+        Telefon P/G: <%= @registration.phonenumber %><br>
+        Telefon M: <%= @registration.mobile_number %><br>
         Startzeit: <%= @registration.timeslot1 %>
     </p>
     <p>
@@ -31,14 +33,14 @@
         - Falls Du aus irgendeinem Grund an der Teilnahme verhindert bist, lösche bitte deine Anmeldung (<%= link_to "Login", new_participant_session_url %>).<br>
         - Wenn du Fragen zum Anlass hast,  kontaktiere uns bitte per Mail (rekord@seeclub-richterswil.ch) oder in dringenden Fällen per Telefon (044 …).<br>
         - Bei einer kurzfristigen Verhinderung wäre es toll, wenn Du für einen Ersatz sorgen könntest.<br>
-        - Lies bitte das Dokument im Anhang (Specific Guidelines Pack) aufmerksam durch.
+        - Lies bitte das Dokument im Anhang (Specific Guidelines Pack) aufmerksam durch.<br>
         - <strong>Triff bitte pünktlich, d.h. mindestens 15 Minuten vor deiner Startzeit, im Zelt ein.</strong>
     </p>
     <p>
         Rudersportliche Grüsse
     </p>
     <p>
-        Seeclub Richterswil
+        Seeclub Richterswil<br>
         OK Weltrekordversuch
     </p>
 </body>

@@ -2,8 +2,11 @@
 
   <div class="row">
     <div class="col-sm-12">
+      <% if @updated %>
       <h1>Vielen Dank für deine Anmeldung</h1>
       <p>Die untenstehenden Details sowie weitere Informationen werden dir an die angegebene Mailadresse gesendet.</p>
+      <% else %>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -29,7 +32,7 @@
         <dd>20.06.2015 <strong><%= @participant.timeslot1.strftime('%H:%M') %></strong></dd>
       </dl>
       <%= link_to 'Meine Daten ändern', edit_participant_path, class: 'btn btn-default' %>
-      <%= link_to 'Meine Anmeldung löschen', participant_path(current_participant), class: 'btn btn-default', method: :delete, data: {confirm: 'Sind Sie sicher dass Sie Ihre Anmeldung löschen wollen? Ihre Daten werden dabei unwiederruflich gelöscht.'} %>
+      <%= link_to 'Meine Anmeldung löschen', participant_path(current_participant), class: 'btn btn-default', method: :delete, data: {confirm: 'Bist Du sicher dass Du Ihre Anmeldung löschen wollen? Deine Daten werden dabei unwiederruflich gelöscht.'} %>
     </div>
   </div>
 </div>

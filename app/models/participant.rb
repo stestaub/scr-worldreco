@@ -7,7 +7,7 @@ class Participant < ActiveRecord::Base
 
   validates :email, :first_name, :last_name, :timeslot1, presence: true
   validate :validate_phone_number
-  validates_uniqueness_of :email, message: "Du scheinst dich bereits angemeldet zu haben, diese Email Adresse ist bereits vergeben"
+  validates_uniqueness_of :email, message: "Du scheinst dich bereits angemeldet zu haben; diese Mail-Adresse ist bereits vergeben."
   validates :confirm_age, acceptance: { accept: true, message: "Du musst mindestens 18 Jahre alt sein, um teilnehmen zu können." }
   validates :accept_agb, acceptance: { accept: true, message: "Bitte lese und akzeptiere die Teilnahmebedingungen." }
 
@@ -29,8 +29,8 @@ class Participant < ActiveRecord::Base
   private
     def validate_phone_number
       if self.phonenumber.blank? && self.mobile_number.blank?
-        self.errors.add(:phonenumber, 'Gib bitte mindestens eine Telefonnummer an')
-        self.errors.add(:mobile_number, 'Gib bitte mindestens eine Telefonnummer an')
+        self.errors.add(:phonenumber, 'Gib bitte mindestens eine Telefonnummer an.')
+        self.errors.add(:mobile_number, 'Gib bitte mindestens eine Telefonnummer an.')
       end
     end
 end

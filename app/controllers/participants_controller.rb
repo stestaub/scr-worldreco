@@ -18,7 +18,7 @@ class ParticipantsController < ApplicationController
   def update
     @participant = current_participant
     if @participant.update_attributes(registration_params)
-      flash[:success] = "Deine Daten wurden erfolgreich aktuallisiert. Eine Email mit deiner neuen Anmeldung wurde gesendet."
+      flash[:success] = "Deine Daten wurden erfolgreich aktualisiert. Eine E-Mail mit deiner neuen Anmeldung wurde an dich gesendet."
       RegistrationConfirmationMailer.registration_confirmation_mail(@participant).deliver
       redirect_to participant_root_path
     else
@@ -30,7 +30,7 @@ class ParticipantsController < ApplicationController
   def destroy
     @participant = current_participant
     @participant.destroy
-    flash[:info] = "Schade dass du nicht dabei sein kannst. Falls du dich doch noch umentscheiden, kannst du dich jeder Zeit wieder anmelden"
+    flash[:info] = "Schade, dass Du nicht dabei sein kannst. Falls Du dich doch noch anders entscheiden solltest, kannst Du dich jederzeit wieder neu anmelden."
     redirect_to root_path
   end
 

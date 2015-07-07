@@ -6,7 +6,7 @@
     <%= f.email_field :email, label: "E-Mail", help: "Nach deiner Anmeldung werden wir dir ein Bestätigungs-Mail mit weiteren Informationen zum Anlass an diese Adresse senden." %>
     <% unless edit_form %>
         <%= f.password_field :password, label: "Passwort" %>
-        <%= f.password_field :password_confirmation, label: "Passwort wiederholen", help: "Gebe ein Passwort an um deine Anmeldung später zu bearbeiten oder zu löschen" %>
+        <%= f.password_field :password_confirmation, label: "Passwort wiederholen", help: "Gib ein Passwort an, um deine Anmeldung später bearbeiten oder löschen zu können." %>
     <% end %>
     <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
     <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
@@ -54,6 +54,6 @@
     <% end %>
 
     <%= f.form_group :actions do %>
-        <%= f.submit (edit_form ? "Änderungen Speichern":"Anmelden"), class: "btn btn-success" %>
+        <%= f.submit (edit_form ? "Änderungen speichern":"Anmelden"), class: "btn btn-success" %>
     <% end %>
 <% end %>

@@ -3,8 +3,8 @@
     <div class="col-sm-12">
         <h2>Login</h2>
         <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), layout: :horizontal) do |f| %>
-          <%= f.alert_message "Bitte überprüfe deine Login Daten.", error_summary: false %>
-          <%= f.email_field :email, autofocus: true, label: "Email" %>
+          <%= f.alert_message "Bitte überprüfe deine Login-Daten.", error_summary: false %>
+          <%= f.email_field :email, autofocus: true, label: "E-Mail" %>
             <%= f.password_field :password, autocomplete: "off", label: "Passwort" %>
 
 

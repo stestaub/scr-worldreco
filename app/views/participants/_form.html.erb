@@ -10,6 +10,7 @@
     <% end %>
     <%= f.telephone_field :phonenumber, label: "Telefon P/G" %>
     <%= f.telephone_field :mobile_number, label: "Telefon M", help: "Für allfällige dringende Informationen oder Rückfragen unsererseits." %>
+    <%= f.text_field :city, label: "Wohnort" %>
 
     <%= f.form_group :timeslots, label: {text: "Gewünschte Startzeit"} do %>
         <div class="row">

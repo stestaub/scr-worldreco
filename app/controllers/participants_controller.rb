@@ -56,6 +56,7 @@ class ParticipantsController < ApplicationController
                                            :password,
                                            :password_confirmation,
                                            :timeslot1,
+                                           :city,
                                            :mobile_number,
                                            :phonenumber, :accept_agb, :confirm_age)
     end

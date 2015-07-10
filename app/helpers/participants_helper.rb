@@ -7,7 +7,7 @@ module ParticipantsHelper
 
     empty = '#ffffff'
 
-    limit = 2
+    limit = 26
 
     if regCount >= limit
       color = full
